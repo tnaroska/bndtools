@@ -405,12 +405,14 @@ ext.bnd_doBundle       = !bnd_noBundles
 ext.bnd_doRelease      = !bnd_releaseRepo.isEmpty()
 ext.bnd_doJUnitTests   = !(bnd_noJunit1    || bnd_noJunit2)
 ext.bnd_doBundleTests  = !(bnd_noJunitOsgi || bnd_testCases.isEmpty())
+ext.bnd_doExport       = !bnd_runFiles.isEmpty()
 
 
 bundle.onlyIf            { bnd_doBundle      }
 release.onlyIf           { bnd_doRelease     }
 test.onlyIf              { bnd_doJUnitTests  }
 bundleTest.onlyIf        { bnd_doBundleTests }
+export.onlyIf            { bnd_doExport      }
 
 
 /* Load the build customisations */
